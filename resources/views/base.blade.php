@@ -1,6 +1,12 @@
+@php
+$tags = [
+  "BelajarMenulis", "Blogging", "Programming",
+  "Komputer", "Koding", "Game",
+];
+@endphp
 <!DOCTYPE html>
 <html lang="id-ID">
-    <head>
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -52,107 +58,42 @@
     <script src="/old/assets/thirdparty/jquery-1.11.2.js"></script>
     <script src="/old/assets/thirdparty/twbs-bootstrap/js/bootstrap.min.js"></script>
     <script src="/old/assets/thirdparty/smiley.js/smileys.js"></script>
-</head>
 
-    <body id="top">
-        <div class="hidden-xs">
-            <style>
-    .shadowed {
-        -webkit-filter: drop-shadow(1px 2px 4px rgba(0,0,0,0.8));
-        filter: url(#drop-shadow);
-        -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
-        filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
-    }
+    <style>@include('index.style')</style>
+  </head>
 
-    .container-front-page h1{
-        font-family: Ubuntu, Arial;
-        letter-spacing: .1725em;
-        font-weight: lighter;
-    }
-    #main-image{
-        width: 128px;
-        display: inline-block;
-        /*border: 1px solid rgba(0, 0, 0, .3);*/
-    }
-    #toggle-catatan{
-        font-size: 2em;
-    }
-    .fade-big-wrapper{
-        position: relative;
-        text-align: center;
-        display: inline-block;
-        padding: 2px 10px;
-        line-height: .1em;
-    }
+  <body id="top">
 
-    #useless-front{
-        position: fixed;
-        width: 100%;
-        z-index: 100;
-        padding-bottom: 32px;
-
-        background: rgba(226,226,226,1);
-        background: -moz-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(245,245,245,0.95) 69%, rgba(250,250,250,0.9) 85%, rgba(252,252,252,0.8) 94%, rgba(254,254,254,0) 100%);
-        background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(226,226,226,1)), color-stop(69%, rgba(245,245,245,0.95)), color-stop(85%, rgba(250,250,250,0.9)), color-stop(94%, rgba(252,252,252,0.8)), color-stop(100%, rgba(254,254,254,0)));
-        background: -webkit-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(245,245,245,0.95) 69%, rgba(250,250,250,0.9) 85%, rgba(252,252,252,0.8) 94%, rgba(254,254,254,0) 100%);
-        background: -o-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(245,245,245,0.95) 69%, rgba(250,250,250,0.9) 85%, rgba(252,252,252,0.8) 94%, rgba(254,254,254,0) 100%);
-        background: -ms-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(245,245,245,0.95) 69%, rgba(250,250,250,0.9) 85%, rgba(252,252,252,0.8) 94%, rgba(254,254,254,0) 100%);
-        background: linear-gradient(to bottom, rgba(226,226,226,1) 0%, rgba(245,245,245,0.95) 69%, rgba(250,250,250,0.9) 85%, rgba(252,252,252,0.8) 94%, rgba(254,254,254,0) 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe', GradientType=0 );
-    }
-</style>
-
-<div class="container container-front-page" id="useless-front">
-    <div class="wrapper" style="margin-top: 24px;">
-        <div class="row">
+    <div class="hidden-xs">
+      <div
+        class="container container-front-page"
+        id="useless-front"
+      >
+        <div class="wrapper">
+          <div class="row">
             <div class="col-xs-12">
-                <div class="row">
-                    <div
-                        class="col-sm-8 text-right"
-                    >
-                        <h1
-                            style="
-                                border-bottom: 1px solid rgba(0, 0, 0, .3);
-                                margin-bottom: 0;
-                            "
-                        >Catatan dwijpr</h1>
-                        <div
-                            id="main-image-wrapper"
-                            style="padding-top: 8px;"
-                        >
-                            <div class="fade-big-wrapper">
-                                <span class="fade-big text-info">#BelajarMenulis</span>
-                            </div>
-                            <div class="fade-big-wrapper">
-                                <span class="fade-big text-info">#Blogging</span>
-                            </div>
-                            <div class="fade-big-wrapper">
-                                <span class="fade-big text-info">#Programming</span>
-                            </div>
-                            <div class="fade-big-wrapper">
-                                <span class="fade-big text-info">#Komputer</span>
-                            </div>
-                            <div class="fade-big-wrapper">
-                                <span class="fade-big text-info">#Koding</span>
-                            </div>
-                            <div class="fade-big-wrapper">
-                                <span class="fade-big text-info">#<i>Game</i></span>
-                            </div>
-                        </div>
+              <div class="row">
+                <div
+                  class="col-sm-12 text-right"
+                >
+                  <h1 class="mainHeader">Catatan dwijpr</h1>
+                  <div id="main-image-wrapper">
+                    @foreach ($tags as $tag)
+                    <div class="fade-big-wrapper">
+                      <span class="fade-big text-muted">
+                      #{{ $tag }}
+                      </span>
                     </div>
-                    <div class="col-sm-4">
-                        <img
-                            src="/old/assets/img/dwi.png"
-                            id="main-image"
-                            class="img-responsive shadowed"
-                        >
-                    </div>
+                    @endforeach
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-</div>
-<div style="padding-top: 200px;"></div>
+      </div>
+
+      <div style="padding-top: 128px;"></div>
 
         </div>
         <div id="the-blog">
@@ -162,15 +103,19 @@
         <div class="hidden-xs wrapper">
             <div class="home">~</div>
             <div class="site-title">Catatan dwijpr</div>
+            <!--
             <div class="photoframe">
                 <img src="/old/assets/img/dwi.png" style="padding: 8px;">
             </div>
+            -->
         </div>
         <div class="visible-xs wrapper">
             <div class="site-title">Catatan dwijpr</div>
+            <!--
             <div class="photoframe">
                 <img src="/old/assets/img/dwi.png" style="padding: 8px;">
             </div>
+            -->
         </div>
     </a>
 </header>
