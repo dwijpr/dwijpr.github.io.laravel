@@ -1,4 +1,161 @@
 
+body{
+    background: #F4F4F4;
+}
+
+hr{
+    border-top: 1px solid black;
+}
+
+.monospace {
+    font-family: Monospace;
+}
+
+.site-header{
+    text-align: right;
+    border: none;
+    overflow: hidden;
+    padding: 10px;
+    padding-bottom: 0;
+}
+
+.site-header *{
+    text-decoration: none !important;
+}
+
+.site-header > .wrapper{
+    position: relative;
+    top: 18px;
+}
+
+.home{
+    font-weight: bold;
+    font-size: 108px;
+    font-family: sans-serif;
+    position: absolute;
+    top: -36px;
+}
+
+.site-title{
+    float: none;
+    display: inline-block;
+}
+
+.site-footer{
+    padding: 20px 0;
+    border: none;
+}
+
+.page-content{
+    padding: 0;
+}
+
+.page-content > .wrapper{
+    border: 1px solid rgba(0, 0, 0, .3);
+}
+
+div.photoframe{
+    position: relative;
+    top: -4px;
+    display: inline-block;
+    width: 72px;
+    border: 1px solid grey;
+    border-radius: 36px;
+}
+div.photoframe img{
+    border-radius: 50%;
+}
+
+.site-header .visible-xs .site-title{
+    font-size: 20px;
+}
+
+.site-header .hidden-xs .photoframe{
+    background: grey;
+    transition: all .5s ease;
+}
+.site-header:hover .hidden-xs .photoframe{
+    background: transparent;
+}
+
+.site-header .hidden-xs .photoframe img{
+    opacity: .5;
+    transition: all .5s ease;
+}
+.site-header:hover .hidden-xs .photoframe img{
+    opacity: 1;
+}
+
+.site-header .hidden-xs .site-title{
+    position: relative;
+    right: -80px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .5s ease;
+}
+.site-header:hover .hidden-xs .site-title{
+    right: 0px;
+    opacity: 1;
+    visibility: visible;
+}
+
+.page-content > .wrapper{
+    margin: 0 10px;
+}
+
+@media (min-width: 768px){
+    .main-content{
+        padding: 2%;
+    }
+
+    .page-content > .wrapper{
+        margin: 0 auto;
+    }
+
+    p{
+        line-height: 1.675em;
+    }
+}
+
+div.toc{
+    margin: 10px 0;
+}
+
+.highlight-wrapper{
+    margin-bottom: 10px;
+    max-height: 400px;
+    overflow: auto;
+    border: 1px solid rgba(0, 0, 0, .5);
+}
+.highlight-wrapper pre{
+    border: none;
+}
+.highlight-wrapper pre, .highlight-wrapper .highlight{
+    margin-bottom: 0px;
+}
+
+.main-content pre
+, .main-content code
+, .main-content pre *
+, .main-content code *{
+    font-family: 'Ubuntu Mono', 'Courier New', monospace;
+    font-size: 13px;
+    word-spacing: initial;
+    word-wrap: initial;
+}
+
+.table.table-not-full{
+    width: initial;
+}
+
+a{
+    color: #1756a9;
+}
+
+a:visited{
+    color: #2a7ae2;
+}
+
 .toc{
     font-size: 13px;
 }
